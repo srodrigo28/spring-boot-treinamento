@@ -1,0 +1,10 @@
+.btn-table{
+    display: flex;
+    gap: 5px;
+}
+.btn{
+    width: 80px;
+}
+.btn-form{
+    width: 100px;
+}

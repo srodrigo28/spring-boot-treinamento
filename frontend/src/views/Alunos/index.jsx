@@ -1,6 +1,29 @@
 import "./alunos.css";
+import { useState } from "react"
+
+import { toast } from 'react-toastify';
 
 export function Aluno(){
+    const [nome, setNome] = useState('')
+    const [sexo, setSexo] = useState('')
+    const [serie, setSerie] = useState('')
+
+    const validarCampos = (e) => {
+        e.preventDefault()
+
+        // nome
+        if(nome === ""){
+            toast("Precisa preencher o campo nome");
+        }else if(sexo === "" || sexo === "Selecione sexo"){
+            toast("Precisa preencher o campo sexo");
+        }else if(serie === "" ){
+            toast("Precisa preencher o campo serie");
+        }else{
+            toast("Parabéns você inseriu com sucesso");
+        }
+        
+    }
+
     return(
         <div>
             <div className="card mt-5">
@@ -9,32 +32,38 @@ export function Aluno(){
                 </div>
                 <div className="card-body">
                     <div className="container">
-                        <form>
+                        <form onSubmit={validarCampos}>
                             <div className="row">
-                                <div className="col-8">
+                                <div className="col-6">
                                     <label htmlFor="nome">Nome</label>
-                                    <input type="text" id="nome" className="form-control" placeholder="nome"/>
+                                    <input type="text" id="nome" className="form-control" placeholder="nome"
+                                    onChange={ e => setNome(e.target.value)} value={nome}
+                                    />
                                 </div>
 
                                 <div className="col">
                                     <label htmlFor="sexo">Sexo</label>
-                                    <select className="form-control" id="sexo">
-                                        <option>Feminino</option>
-                                        <option>Masculino</option>
+                                    <select className="form-control" 
+                                    id="sexo" value={sexo} onChange={ e => setSexo(e.target.value)}>
+                                        <option value="x" selected>Selecione sexo</option>
+                                        <option value="Feminino">Feminino</option>
+                                        <option value="Masculino">Masculino</option>
                                     </select>
                                 </div>
 
                                 <div className="col">
                                     <label htmlFor="serie">Serie</label>
-                                    <input type="text" id="serie" className="form-control" placeholder="serie"/>
+                                    <input type="text" id="serie" className="form-control" placeholder="serie"
+                                    value={serie} onChange={ e => setSerie(e.target.value)} />
                                 </div>
                                 <div className="row mt-3">
                                     <div className="col">
-                                        <div className="btn btn-outline-success btn-form">Adicionar</div>
+                                        <button type="submit" className="btn btn-outline-success btn-form">Adicionar</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
                         <table className="table table-striped table-bordered mt-5">
                             <thead>
                                 <tr>

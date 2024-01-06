@@ -1,47 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-
+/** 0. Reset CSS */
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
 }
+/** 1. Header */
 
+/** 2. Logo */
 header{
-    background-color: #24252a;
-    box-shadow: 0 3px 10px #464646;
+  background-color: #24252a;
+  box-shadow: 0 3px 10px #474647;
 }
-
-.nav-bar {
+.nav-bar{
     display: flex;
-    justify-content: space-between;
     padding: 1.5rem 6rem;
+    justify-content: space-between;
 }
-
+/** 3. Logo */
 .logo{
     display: flex;
     align-items: center;
 }
-
-.nav-list{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-}
-
+/** 4. Menu */
 .nav-list ul{
     display: flex;
     justify-content: center;
     list-style: none;
 }
-
 .nav-item{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-align: center;
     width: 200px;
     color: #fff;
     padding: 10px;
     margin: 0 15px;
-    transition: .7s all;
+    transform: .7s all;
 }
 .nav-item:hover{
     width: 200px;
@@ -53,8 +46,8 @@ header{
 }
 .nav-link{
     text-decoration: none;
-    font-size: 1.15rem;
-    color: #FFF;
+    font-size: 1.5rem;
+    color: #fff;
     font-weight: 400;
 }
 
@@ -66,70 +59,14 @@ header{
     font-weight: bold;
     margin-top: 13px;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 7px;
     background-color: darkviolet;
 }
 
 .login-button button a{
     text-decoration: none;
-    color: white;
+    color: #fff;
     font-weight: 700;
 }
 
-/* Mobile */
-.mobile-menu-icon{
-    display: none;
-}
-
-.mobile-menu{
-    display: none;
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 730px) {
-    .nav-bar{
-        padding: 1.5rem 4rem;
-    }
-    .nav-item{
-        display: none;
-    }
-    .login-button{
-        display: none;
-    }
-    
-    .mobile-menu-icon{
-        display: block;
-    }
-    
-    .mobile-menu-icon button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .mobile-menu-icon ul{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    .mobile-menu .nav-item{
-        display: block;
-        padding-top: 1.2rem;
-    }
-
-    .mobile-menu .login-button{
-        display: block;
-        padding: 1rem 2rem;
-    }
-
-    .mobile-menu .login-button button{
-        width: 100%;
-    }
-
-    .open{
-        display: block;
-    }
-}
+/** 5. Responsiva */

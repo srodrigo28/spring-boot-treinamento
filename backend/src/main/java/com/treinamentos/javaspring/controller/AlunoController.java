@@ -25,6 +25,12 @@ public class AlunoController {
     private AlunoRepository alunoRepository;
 
     @CrossOrigin("*")
+    @PostMapping("/") // 1 Cadastrar
+    public String index(){
+        return "index";
+    }
+
+    @CrossOrigin("*")
     @PostMapping("/cadastrar") // 1 Cadastrar
     public Aluno cadastrar(@RequestBody Aluno obj){
         return alunoRepository.save(obj);
@@ -37,7 +43,7 @@ public class AlunoController {
     }
 
     @CrossOrigin("*") 
-    @GetMapping("/{id}") // 3 Listar um
+    @GetMapping("/listar/{id}") // 3 Listar um
     public Optional<Aluno> listarUm(@PathVariable Long id){
         return alunoRepository.findById(id);
     }
